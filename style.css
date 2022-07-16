@@ -1,3 +1,5 @@
+/** RESET */
+
 * {
   padding: 0;
   margin: 0;
@@ -16,6 +18,13 @@ a {
 ul {
   list-style: none;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/** MOBILE FIRST */
 
 button.hide{
   display: none;
@@ -68,21 +77,25 @@ section#home {
 }
 
 
-section#home figure#home-img {
+section#home img#home-img {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-section#home figure#home-img img {
   max-width: 70%;
 }
 
-section#home div#home-text{
+section#home div#home-wrap{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+section#home div#home-wrap div#home-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 div#home-text p {
@@ -116,16 +129,24 @@ section#services {
   justify-content: space-evenly;
   font-size: 20px;
   padding-bottom: 20px;
+  gap: 1rem;
 }
 
-section#services figure#service-img {
+section#services div#services-description {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-section#services figure#service-img img{
+
+section#services div#services-description img#service-img {
   max-width: 55%;
+}
+
+section#services label {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 section#services ul#service-list li{
@@ -134,7 +155,6 @@ section#services ul#service-list li{
   justify-content: flex-start;
   gap: 15px;
   margin: 20px;
-  
 }
 
 section#services ul#service-list li::before {
@@ -174,6 +194,7 @@ section#testimonial-container {
   align-items: center;
   justify-content: center;
   gap: 30px;
+  align-self: center;
 }
 
 section#testimonial-container div.card{
@@ -181,17 +202,24 @@ section#testimonial-container div.card{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   max-width: 90%;
-  padding: 10px 15px;
+  padding: .8rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 15px;
+  gap: .5rem;
 }
 
 section#testimonial-container div.card img {
   width: 25%;
   border-radius: 50%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+section#testimonial-container div.card div.testimonialHolder{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: .5rem;
 }
 
 section#testimonial-container div.card div.testimonialHolder p.testimonialMessage{
@@ -244,9 +272,9 @@ section#contact div#contact-info h3{
   font-size: 1.5rem;
 }
 
-section#contact div#contact-info div p,
-section#contact div#contact-info div address,
-section#contact div#contact-info div a {
+section#contact div#contact-info p,
+section#contact div#contact-info address,
+section#contact div#contact-info a {
   display: block;
   font-size: .9rem;
   color: #FFFFFF;
@@ -257,8 +285,7 @@ section#contact div#social{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
+  gap: .8rem;
 }
 
 section#contact div#social ul {
@@ -266,4 +293,96 @@ section#contact div#social ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/** DESKTOP */
+
+@media (min-width: 1024px) {
+
+  /** HEADER */
+  button.hide{
+    display: initial;
+    background-color: #D6000D;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 10px 50px;
+    cursor: pointer;
+  }
+
+  button.hide:hover{
+    background-color: #ff2735;
+    transition: 300ms;
+  }
+
+  /** HOME */
+  
+  section#home {
+    flex-direction: row;
+    margin: 0 40px;
+    min-height: 100vh;
+  }
+
+  section#home img#home-img {
+    max-width: 30%;
+  }
+
+  section#home div#home-wrap {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  /** SERVICE */
+  
+  section#services {
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+  }
+
+  section#services div#services-description {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  section#services div#services-description ul#service-list li{
+    margin-left: 0;
+  }
+
+  section#services form#service-form{
+    flex-direction: row;
+    max-width: 50%;
+  }
+
+  /** TESTIMONIALS */
+
+  section#testimonial-container {
+    min-height: 70vh;
+    max-width: 80vw;
+    flex-direction: row;
+  }
+
+  section#testimonial-container div.card{
+    min-height: 10rem;
+  }
+
+  /** CONTACT */
+
+  section#contact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  section#contact div#title {
+    align-self: flex-start;
+  }
+
+  section#contact div#social{
+    width: initial;
+  }
+
+  section#contact div#social ul#social-links{
+    align-items: flex-start;
+  }
 }
