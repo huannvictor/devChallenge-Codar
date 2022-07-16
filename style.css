@@ -196,6 +196,7 @@ section#testimonial-container div.card img {
 
 section#testimonial-container div.card div.testimonialHolder p.testimonialMessage{
   font-size: 15px;
+  max-width: 300px;
 }
 
 section#testimonial-container div.card div.testimonialHolder p.personName{
