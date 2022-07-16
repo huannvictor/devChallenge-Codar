@@ -5,14 +5,264 @@
 }
 
 body{
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #141414;
+}
+
+ul {
+  list-style: none;
 }
 
 button.hide{
   display: none;
 }
 
-#testimonial-container img {
-  width: 100px;
+/** HEADER */
+
+header{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-weight: 700;
+}
+
+header h1 {
+  color: #D6000D;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+header h1 span {
+  color: #141414;
+}
+
+header nav#navbar ul {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header nav#navbar ul li a:hover{
+  color: #D6000D;
+  border-bottom: 1px #D6000D solid;
+  padding-bottom: 8px;
+  transition: 300ms;
+}
+
+/** HOME */
+
+section#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 80vh;
+}
+
+
+section#home figure#home-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section#home figure#home-img img {
+  max-width: 70%;
+}
+
+section#home div#home-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div#home-text p {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+div#home-text strong {
+  font-size: 45px;
+  color: #D6000D;
+}
+
+section#home button{
+  background-color: #D6000D;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 65px;
+  font-weight: 400;
+  font-size: 13pt;
+  cursor: pointer;
+}
+
+/** SERVICES */
+
+section#services {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+section#services figure#service-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section#services figure#service-img img{
+  max-width: 55%;
+}
+
+section#services ul#service-list li{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin: 20px;
+  
+}
+
+section#services ul#service-list li::before {
+  content: url(assets/checkmark.svg);
+}
+
+section#services form#service-form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 700;
+}
+
+section#services form#service-form input#cellphone-input {
+  padding: 18px;
+  border-radius: 15px;
+  border: none;
+  background: #DCDCDC;
+  outline: none;
+}
+
+section#services form#service-form button {
+  padding: 18px;
+  border-radius: 15px;
+  border: none;
+  background: #D6000D;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/** TESTIMONIALS */
+
+section#testimonial-container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+section#testimonial-container div.card{
+  background-color: #DCDCDC;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  max-width: 90%;
+  padding: 10px 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+}
+
+section#testimonial-container div.card img {
+  width: 25%;
   border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+section#testimonial-container div.card div.testimonialHolder p.testimonialMessage{
+  font-size: 15px;
+}
+
+section#testimonial-container div.card div.testimonialHolder p.personName{
+  font-size: 25px;
+  font-weight: 700;
+}
+section#testimonial-container div.card div.testimonialHolder p.companyName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/** CONTACT */
+
+section#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+  background-color: #141414;
+  color: #ffffff;
+  padding: 30px;
+}
+
+section#contact div#title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+section#contact div#title h1 {
+  font-size: 3rem;
+  font-style: italic;
+}
+
+section#contact div#contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+section#contact div#contact-info h3{
+  font-size: 1.5rem;
+}
+
+section#contact div#contact-info div p,
+section#contact div#contact-info div address,
+section#contact div#contact-info div a {
+  display: block;
+  font-size: .9rem;
+  color: #FFFFFF;
+}
+
+section#contact div#social{
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+section#contact div#social ul {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -15,6 +15,12 @@ testimonialsList.map((element, key) => {
   personName.innerHTML = element.name;
   companyName.innerHTML = element.company;
 
+  card.classList.add("card");
+  testimonialHolder.classList.add("testimonialHolder");
+  testimonialMessage.classList.add("testimonialMessage");
+  personName.classList.add("personName");
+  companyName.classList.add("companyName");
+
   testimonialHolder.append(testimonialMessage, personName, companyName);
   card.append(picture, testimonialHolder);
 
